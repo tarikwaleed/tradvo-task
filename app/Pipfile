@@ -10,6 +10,7 @@ django-cors-headers = "*"
 djangorestframework = "*"
 gunicorn = "*"
 requests = "*"
+appium-python-client = "*"
 
 [dev-packages]
 black = "*"
