@@ -9,7 +9,7 @@ class Command(BaseCommand):
         desired_caps = {
             'platformName': 'Android',
             'deviceName': 'emulator-5554',  # Use 'adb devices' to check the emulator name
-            'app': '/app/test.apk',  # Path inside the container where the APK is located
+            'app': '/app/apks/test.apk',  # Path inside the container where the APK is located
             'automationName': 'UiAutomator2',
         }
 

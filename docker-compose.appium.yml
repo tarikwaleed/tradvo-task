@@ -29,6 +29,7 @@ services:
       - ./app/logs:/logs
       - ./app/local-cdn:/app/local-cdn
       - ./app/screenshots:/app/screenshots
+      - ./app/apks:/app/apks
   android-emulator:
     image: budtmo/docker-android:emulator_11.0
     container_name: android-container
