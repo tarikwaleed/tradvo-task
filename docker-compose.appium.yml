@@ -14,7 +14,7 @@ services:
       - android-appium-network
 
   appium-server:
-    build: ./appium-docker
+    build: ./appium
     container_name: appium-server
     ports:
       - "4723:4723"
