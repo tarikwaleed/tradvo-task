@@ -38,24 +38,27 @@ services:
     container_name: android-container
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S10
+      - DEVICE=Samsung Galaxy S10
       - WEB_VNC=true
+      - APPIUM=true
+      - CONNECT_TO_GRID=true
+      - APPIUM_HOST=127.0.0.1
+      - APPIUM_PORT=4723
+      - SELENIUM_HOST=172.17.0.1
+      - SELENIUM_PORT=4444
+      - MOBILE_WEB_TEST=true
     devices:
       - /dev/kvm:/dev/kvm
     ports:
       - "6080:6080"
       - "5555:5555" 
+      - "6080:6080"
+      - "4723:4723"
+      - "5554:5554"
+      - "5555:5555"
     networks:
       - android-appium-network
 
-  appium-server:
-    build: ./appium
-    container_name: appium-server
-    ports:
-      - "4723:4723"
-    environment:
-      - APPIUM_ADB_SERVER_URL=http://android-emulator:5555
-    networks:
-      - android-appium-network
 
 networks:
   android-appium-network:
