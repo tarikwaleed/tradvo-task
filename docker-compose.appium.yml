@@ -43,6 +43,7 @@ services:
       - /dev/kvm:/dev/kvm
     ports:
       - "6080:6080"
+      - "5555:5555" 
     networks:
       - android-appium-network
 
@@ -51,6 +52,8 @@ services:
     container_name: appium-server
     ports:
       - "4723:4723"
+    environment:
+      - APPIUM_ADB_SERVER_URL=http://android-emulator:5555
     networks:
       - android-appium-network
 
