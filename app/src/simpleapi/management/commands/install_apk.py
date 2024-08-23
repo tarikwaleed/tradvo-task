@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         desired_caps = {
             'platformName': 'Android',
-            'deviceName': 'emulator-5554',  # Use 'adb devices' to check the emulator name
+            'deviceName': 'Samsung Galaxy S10',  # Use 'adb devices' to check the emulator name
             'app': '/app/apks/test.apk',  # Path inside the container where the APK is located
             'automationName': 'UiAutomator2',
         }
