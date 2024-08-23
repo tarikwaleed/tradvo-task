@@ -10,6 +10,8 @@ services:
       - app
     volumes:
       - ./app/local-cdn:/local-cdn
+    networks:
+      - android-appium-network
   app:
     image: app
     build:
