@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from appium import webdriver
 import time
+from appium.webdriver.webdriver import AppiumOptions
 
 class Command(BaseCommand):
     help = "Install an APK on the Android emulator"
@@ -13,7 +14,9 @@ class Command(BaseCommand):
             'automationName': 'UiAutomator2',
         }
 
-        driver = webdriver.Remote('http://appium-server:4723/wd/hub', desired_caps)
+        appium_options = AppiumOptions()
+        appium_options.load_capabilities(desired_caps)
+        driver = webdriver.Remote('http://appium-server:4723/wd/hub', options=appium_options)
         time.sleep(10)  # Give some time for the installation to complete
 
         # Take a screenshot of the initial screen after installation
