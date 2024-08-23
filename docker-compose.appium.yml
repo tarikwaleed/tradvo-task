@@ -54,6 +54,8 @@ services:
       - "5555:5555" 
       - "4723:4723"
       - "5554:5554"
+    volumes:
+      - ./app/apks:/app/apks
     networks:
       - android-appium-network
 
