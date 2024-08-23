@@ -29,6 +29,7 @@ services:
     volumes:
       # - ./app/src:/app/src
       - ./app/logs:/logs
+      - ./app/src:/app/src
       - ./app/local-cdn:/app/local-cdn
       - ./app/screenshots:/app/screenshots
       - ./app/apks:/app/apks

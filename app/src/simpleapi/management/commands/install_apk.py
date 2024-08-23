@@ -16,7 +16,7 @@ class Command(BaseCommand):
 
         appium_options = AppiumOptions()
         appium_options.load_capabilities(desired_caps)
-        driver = webdriver.Remote('http://appium-server:4723/wd/hub', options=appium_options)
+        driver = webdriver.Remote('http://appium-server:4723', options=appium_options)
         time.sleep(10)  # Give some time for the installation to complete
 
         # Take a screenshot of the initial screen after installation
