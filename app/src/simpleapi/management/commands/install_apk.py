@@ -14,7 +14,8 @@ class Command(BaseCommand):
             "automationName": "UiAutomator2",
             "newCommandTimeout": 600,  # Increase command timeout to 600 seconds
             "androidDeviceReadyTimeout": 60,  # Increase device ready timeout to 60 seconds
-            "adbExecTimeout": 200000  # Increase adb execution timeout to 200000ms
+            "adbExecTimeout": 200000  ,
+            "appWaitForLaunch" : False,
         }
 
         appium_options = AppiumOptions()
