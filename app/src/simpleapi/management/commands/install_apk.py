@@ -8,10 +8,13 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         desired_caps = {
-            'platformName': 'Android',
-            'deviceName': 'Samsung Galaxy S10',  # Use 'adb devices' to check the emulator name
-            'app': '/app/apks/test.apk',  # Path inside the container where the APK is located
-            'automationName': 'UiAutomator2',
+            "platformName": "Android",
+            "deviceName": "Samsung Galaxy S10",
+            "app": "/app/apks/test.apk",
+            "automationName": "UiAutomator2",
+            "newCommandTimeout": 600,  # Increase command timeout to 600 seconds
+            "androidDeviceReadyTimeout": 60,  # Increase device ready timeout to 60 seconds
+            "adbExecTimeout": 200000  # Increase adb execution timeout to 200000ms
         }
 
         appium_options = AppiumOptions()
