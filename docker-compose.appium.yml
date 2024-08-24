@@ -35,7 +35,7 @@ services:
       - ./app/apks:/app/apks
   android-emulator:
     build:
-      context:./android/
+      context: ./android
     container_name: android-container
     privileged: true
     environment:
