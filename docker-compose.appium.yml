@@ -61,8 +61,6 @@ services:
       - "5554:5554"
     volumes:
       - ./app/apks:/app/apks
-      - data:/home/androidusr
-      - root:/root
     networks:
       - android-appium-network
     restart: always
