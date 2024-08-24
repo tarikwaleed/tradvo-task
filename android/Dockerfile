@@ -1,4 +1,4 @@
-FROM budtmo/docker-android:emulator_11.0
+FROM budtmo/docker-android:emulator_13.0
 
 USER root
 
