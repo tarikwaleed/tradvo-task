@@ -34,11 +34,12 @@ services:
       - ./app/screenshots:/app/screenshots
       - ./app/apks:/app/apks
   android-emulator:
-    image: budtmo/docker-android:emulator_13.0
+    build:
+      context:./android/
     container_name: android-container
+    privileged: true
     environment:
       - EMULATOR_DEVICE=Samsung Galaxy S10
-      - DEVICE=Samsung Galaxy S10
       - WEB_VNC=true
       - APPIUM=true
       - CONNECT_TO_GRID=true
@@ -47,6 +48,10 @@ services:
       - SELENIUM_HOST=172.17.0.1
       - SELENIUM_PORT=4444
       - MOBILE_WEB_TEST=true
+      - WEB_LOG=true
+      - WEB_LOG_PORT=9000
+      - VNC_PASSWORD=yRBLPq4h5bVAzDT83f6jQX
+      - ENV_LOG_PATH=/var/log/
     devices:
       - /dev/kvm:/dev/kvm
     ports:
@@ -56,8 +61,11 @@ services:
       - "5554:5554"
     volumes:
       - ./app/apks:/app/apks
+      - data:/home/androidusr
+      - root:/root
     networks:
       - android-appium-network
+    restart: always
 
 
 networks:
